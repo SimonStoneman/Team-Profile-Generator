@@ -55,4 +55,4 @@ Located in __tests__
 - Intern.test.js
 - Manager.test.js
 
-![Test Outputs](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/tests_ex.jpg)
+![Test Outputs](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/tests_ex.png)
