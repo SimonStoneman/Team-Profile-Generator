@@ -58,9 +58,10 @@ function createManager() {
             type: 'input',
             name: 'officenumber',
             message: 'Please enter your office number:'
-        },
+        }
 
     ]).then(data => {
+
         // teamMembersArr.push(data);
         const name = data.name;
         const id = data.id;
@@ -76,8 +77,12 @@ function createManager() {
 
         teamMembersArr.push(manager);
         console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
-        
-    }).then(chooseAdditionalMembers());
+
+    }).then(data => {
+
+        chooseAdditionalMembers();
+
+    }); 
 }
 
 function createEngineer() {
@@ -104,23 +109,27 @@ function createEngineer() {
         },
 
     ]).then(data => {
-        // teamMembersArr.push(data);
-        const name = data.name;
-        const id = data.id;
-        const email = data.email;
-        const githubname = data.githubname;
+            // teamMembersArr.push(data);
+            const name = data.name;
+            const id = data.id;
+            const email = data.email;
+            const githubname = data.githubname;
 
-        console.log(data.name)
-        console.log(data.id)
-        console.log(data.email)
-        console.log(data.githubname)
+            console.log(data.name)
+            console.log(data.id)
+            console.log(data.email)
+            console.log(data.githubname)
 
-        const engineer = new Engineer(name, id, email, githubname);
+            const engineer = new Engineer(name, id, email, githubname);
 
-        teamMembersArr.push(engineer);
-        console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
+            teamMembersArr.push(engineer);
+            console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
 
-    }).then(chooseAdditionalMembers);
+        }).then(data => {
+
+            chooseAdditionalMembers();
+
+        });
 }
 
 function createIntern() {
@@ -147,23 +156,24 @@ function createIntern() {
         },
 
     ]).then(data => {
-        // teamMembersArr.push(data);
-        const name = data.name;
-        const id = data.id;
-        const email = data.email;
-        const school = data.school;
+            
+            const name = data.name;
+            const id = data.id;
+            const email = data.email;
+            const school = data.school;
 
-        console.log(data.name)
-        console.log(data.id)
-        console.log(data.email)
-        console.log(data.school)
+            console.log(data.name)
+            console.log(data.id)
+            console.log(data.email)
+            console.log(data.school)
 
-        const intern = new Intern(name, id, email, school);
+            const intern = new Intern(name, id, email, school);
 
-        teamMembersArr.push(intern);
-        console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
+            teamMembersArr.push(intern);
 
-    }).then(chooseAdditionalMembers);
+            // console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
+
+        }).then(chooseAdditionalMembers);
 }
 
 function finaliseForHtml() {
@@ -179,7 +189,10 @@ function chooseAdditionalMembers() {
             choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
         }
     ]).then(answer => {
-        switch(answer.choices) {
+
+        console.log(`answer.members is: ${answer.members}`);
+
+        switch(answer.members) {
             case 'Add an engineer':
                 createEngineer();
             case 'Add an intern':
