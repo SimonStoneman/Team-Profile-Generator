@@ -27,6 +27,9 @@ Pull repo contents from: https://github.com/SimonStoneman/Team-Profile-Generator
 * exit by selecting 'Finish building the team'
 * load output/team.html
 
+![Input](./assets/img/readme/input_ex.jpeg)
+![Website](./assets/img/readme/website_ex.jpeg)
+
 ## Credits
 
 ## License
@@ -51,3 +54,5 @@ Located in __tests__
 - Engineer.test.js
 - Intern.test.js
 - Manager.test.js
+
+![Test Outputs](./assets/img/readme/tests_ex.jpeg)
