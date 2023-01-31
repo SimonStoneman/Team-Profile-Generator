@@ -28,7 +28,7 @@ Pull repo contents from: https://github.com/SimonStoneman/Team-Profile-Generator
 * load output/team.html
 
 - ![Input](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/input_ex.jpg)
-- ![Website](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/website_ex.jpeg)
+- ![Website](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/website_ex.jpg)
 
 ## Credits
 
@@ -55,4 +55,4 @@ Located in __tests__
 - Intern.test.js
 - Manager.test.js
 
-![Test Outputs](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/tests_ex.jpeg)
+![Test Outputs](https://github.com/SimonStoneman/Team-Profile-Generator/blob/main/assets/img/readme/tests_ex.jpg)
