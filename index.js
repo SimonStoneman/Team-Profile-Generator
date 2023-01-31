@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const createFile = require("./lib/createFile");
 
 const teamMembersArr = [];
 
@@ -47,7 +48,7 @@ function createManager() {
         {
             type: 'input',
             name: 'id',
-            message: 'Please enter your ID:'
+            message: 'Please enter your Employee ID:'
         },
         {
             type: 'input',
@@ -76,7 +77,7 @@ function createManager() {
         const manager = new Manager(name, id, email, officenumber);
 
         teamMembersArr.push(manager);
-        console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
+        // console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
 
     }).then(data => {
 
@@ -95,7 +96,7 @@ function createEngineer() {
         {
             type: 'input',
             name: 'id',
-            message: 'Please enter your ID:'
+            message: 'Please enter your Employee ID:'
         },
         {
             type: 'input',
@@ -123,7 +124,7 @@ function createEngineer() {
             const engineer = new Engineer(name, id, email, githubname);
 
             teamMembersArr.push(engineer);
-            console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
+            // console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
 
         }).then(function () {
 
@@ -144,7 +145,7 @@ function createIntern() {
         {
             type: 'input',
             name: 'id',
-            message: 'Please enter your ID:'
+            message: 'Please enter your Employee ID:'
         },
         {
             type: 'input',
@@ -184,7 +185,12 @@ function createIntern() {
 };
 
 function finaliseForHtml() {
-    console.log('---------EXITING---------');
+    
+    const team = render(teamMembersArr);
+
+    createFile(OUTPUT_DIR, outputPath, team)
+
+    // console.log('---------EXITING---------');
 };
 
 function chooseAdditionalMembers() {
@@ -197,7 +203,7 @@ function chooseAdditionalMembers() {
         }
     ]).then(answer => {
 
-        console.log(`answer.members is: ${answer.members}`);
+        // console.log(`answer.members is: ${answer.members}`);
 
         switch(answer.members) {
             case 'Add an engineer':
