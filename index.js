@@ -125,7 +125,9 @@ function createEngineer() {
             teamMembersArr.push(engineer);
             console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
 
-        }).then(data => {
+        }).then(function () {
+
+            console.log(`#########createEngineer-func: Recalling chooseAdditionalMembers()#########`)
 
             chooseAdditionalMembers();
 
@@ -173,12 +175,17 @@ function createIntern() {
 
             // console.log(`teamMembersArr has: ${teamMembersArr[0].name}`);
 
-        }).then(chooseAdditionalMembers);
-}
+        }).then(function () {
+
+            console.log(`#########createIntern-func: Recalling chooseAdditionalMembers()#########`)
+            chooseAdditionalMembers();
+
+        });
+};
 
 function finaliseForHtml() {
     console.log('---------EXITING---------');
-}
+};
 
 function chooseAdditionalMembers() {
     inquirer.prompt([
@@ -195,10 +202,13 @@ function chooseAdditionalMembers() {
         switch(answer.members) {
             case 'Add an engineer':
                 createEngineer();
+                break;
             case 'Add an intern':
                 createIntern();
+                break;
             case 'Finish building the team':
                 finaliseForHtml();
+                break;
         };
     });
 };
