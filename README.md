@@ -21,7 +21,7 @@ Pull repo contents from: https://github.com/SimonStoneman/Team-Profile-Generator
 
 ## Usage
 
-* exeecute node index.js
+* execute node index.js
 * enter manager details
 * enter the team members, using 'Add an engineer' or 'Add an intern' options
 * exit by selecting 'Finish building the team'
